@@ -17,15 +17,15 @@ const Thanks = () => {
         className="w-full h-96 object-contain"
       />
       <div className=" flex justify-center">
-        <Link
-          href={"/payment"}
+        <a
+          href={"http://localhost:3000/payment"}
           className="bg-stone-800 px-8 py-4 text-white text-2xl rounded flex items-center gap-3"
         >
           <span>
             <IoIosArrowBack size={24} />
           </span>
           Kembali ke payment
-        </Link>
+        </a>
       </div>
     </div>
   );
