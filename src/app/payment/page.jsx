@@ -2,6 +2,7 @@
 import { useAuth } from "@/context/AuthContext";
 import React, { useEffect, useState } from "react";
 import { FaPlus } from "react-icons/fa";
+import { formatRupiah } from "../utility/formatRupiah";
 
 const Payment = () => {
   const { user } = useAuth();
@@ -42,9 +43,41 @@ const Payment = () => {
     });
 
     const requestData = await response.json();
-    window.snap.pay(requestData.token);
+    window.snap.pay(requestData.token, {
+      onSuccess: function (result) {
+        const updatedBalance = user.balance + amount;
+        updateUserBalance(updatedBalance);
+      },
+    });
     setIsloading(false);
   };
+
+  const updateUserBalance = async (newBalance) => {
+    const updatedUser = { ...user, balance: newBalance };
+
+    try {
+      const response = await fetch(`http://localhost:3001/users/${user.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedUser),
+      });
+
+      if (response.ok) {
+        // Update the user context or trigger a re-fetch of user data
+        const updatedUserData = { ...user, balance: newBalance };
+        localStorage.setItem("user", JSON.stringify(updatedUserData));
+
+        console.log("User balance updated successfully");
+      } else {
+        console.error("Failed to update user balance on the server");
+      }
+    } catch (error) {
+      console.error("Error updating user balance:", error);
+    }
+  };
+
   return (
     <div className="px-8 md:px-20">
       {isLoading ? (
@@ -60,7 +93,7 @@ const Payment = () => {
           <h2 className="text-2xl font-semibold mb-6 ">Saldo </h2>
           <div className="bg-gradient-to-r from-teal-500 to-teal-600 p-6 md:p-10 rounded-2xl text-white">
             <p className="text-3xl md:text-6xl">
-              Rp {user ? user.balance : "0"}
+              {user ? formatRupiah(user.balance) : "0"}
             </p>
           </div>
           {/* <h1 className="text-2xl font-semibold my-10 ">Rencana Tabungan</h1>

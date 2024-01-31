@@ -1,7 +1,11 @@
+"use client";
+import { useAuth } from "@/context/AuthContext";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
-const PlanCard = ({ image, title, content }) => {
+const PlanCard = ({ image, title, content, link }) => {
+  const { user } = useAuth();
   return (
     <div className="w-11/12 md:w-3/4 mx-auto p-10 shadow-xl rounded-2xl">
       <div className="overflow-hidden rounded-3xl mb-10">
@@ -17,9 +21,21 @@ const PlanCard = ({ image, title, content }) => {
       <h1 className="text-3xl font-semibold mb-3 text-center">{title}</h1>
       <p className="mb-6 text-justify">{content}</p>
       <div className="flex justify-center">
-        <button className="w-full bg-blue-500 text-white py-3 rounded font-semibold transition hover:bg-blue-600">
-          Clicked here
-        </button>
+        {user ? (
+          <Link
+            href={link}
+            className="w-full text-center bg-blue-500 text-white py-3 rounded font-semibold transition hover:bg-blue-600"
+          >
+            Clicked here
+          </Link>
+        ) : (
+          <Link
+            href={"/sign-in"}
+            className="w-full text-center bg-blue-500 text-white py-3 rounded font-semibold transition hover:bg-blue-600"
+          >
+            Sign In To View More...
+          </Link>
+        )}
       </div>
     </div>
   );

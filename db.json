@@ -6,7 +6,15 @@
       "fullname": "Muhammad Alfarel Yudistira",
       "email": "farelyudistira01@gmail.com",
       "password": "farel123",
-      "balance": 0
+      "balance": 1000000
+    },
+    {
+      "id": "b61a",
+      "username": "rizki",
+      "fullname": "Rizki maulana",
+      "email": "rizki@gmail.com",
+      "password": "rizki123",
+      "balance": 300000
     }
   ]
 }
