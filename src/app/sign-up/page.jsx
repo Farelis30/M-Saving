@@ -264,7 +264,7 @@ const Signup = () => {
         </button>
         <dialog id="agreementModal" className="modal">
           <div className="modal-box">
-            <h3 className="font-bold text-4xl mb-3">Privacy & Policy</h3>
+            <h3 className="font-bold text-4xl mb-3">SURAT PERSETUJUAN</h3>
             <hr />
             <div className="w-full py-2 text-justify">
               <h1 className="text-3xl font-semibold mb-3">Perlu Diketahui</h1>
@@ -273,8 +273,9 @@ const Signup = () => {
               </h2>
               <ul>
                 <li>
-                  • Calon anggota Koperasi ASKA adalah perorangan WNI minimal
-                  berusia 17 tahun dan maksimal 58 tahun.{" "}
+                  • Calon anggota Koperasi ASKA Maju Terus adalah perorangan
+                  dari Petugas Penanganan Prasarana dan Sarana Umum (PPSU)
+                  minimal berusia 18 tahun dan maksimal 56 tahun (Pensiun).
                 </li>
                 <li>• Menyetujui formulir permohonan pembukaan rekening.</li>
               </ul>
@@ -321,8 +322,8 @@ const Signup = () => {
               <div className="ml-2 mb-3">
                 Klaim atas pengajuan pengembalian uang Tabungan sebelum jangka
                 waktu yang di tentukan, dapat di tolak apabila anggota Koperasi
-                ASKA (Tertanggung) Meninggal Dunia sebagai akibat dari hal-hal
-                berikut:
+                ASKA Maju Terus (Tertanggung) Meninggal Dunia sebagai akibat
+                dari hal-hal berikut:
               </div>
               <ul>
                 <li>• Bunuh diri</li>
@@ -345,12 +346,7 @@ const Signup = () => {
                   dirgantara lainnya atau melakukan aktifitas di udara kecuali
                   sebagai pilot, pramugari/a (flight attendants) atau penumpang
                   pesawat udara berjadwal yang mempunyai lisensi/ ijin yang
-                  lengkap yang dikelola oleh perusahaan penerbangan komersil.{" "}
-                </li>
-                <li>
-                  • Penyakit yang disebabkan baik langsung maupun tidak langsung
-                  oleh AIDS, ARC (AIDS Related Complex) atau infeksi yang
-                  disebabkan oleh HIV (Human Immunodeficiency Virus)
+                  lengkap yang dikelola oleh perusahaan penerbangan komersil.
                 </li>
                 <li>
                   • Penyakit yang disebabkan secara langsung oleh penggunaan
