@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { FiMenu } from "react-icons/fi";
 
-const Navbar = () => {
+const NavbarAdmin = () => {
   const { handleLogout, user } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -22,37 +22,24 @@ const Navbar = () => {
           </div>
           <ul className="hidden md:flex justify-between gap-8 text-xl font-semibold">
             <li className="hover:bg-teal-500 hover:text-white p-2 rounded-md">
-              <Link href={"/"}>Home</Link>
+              <Link href={"/admin"}>Home</Link>
             </li>
             <li className="hover:bg-teal-500 hover:text-white p-2 rounded-md">
-              <Link href={"/about"}>About</Link>
+              <Link href={"/admin/users"}>Users</Link>
             </li>
             {user && (
               <li className="hover:bg-teal-500 hover:text-white p-2 rounded-md">
-                <Link href={"/payment"}>Payment</Link>
+                <Link href={"/admin/mutation"}>Mutation</Link>
               </li>
             )}
-            {user && (
-              <li className="hover:bg-teal-500 hover:text-white p-2 rounded-md">
-                <Link href={"/mutation"}>Mutation</Link>
-              </li>
-            )}
-            <li className="hover:bg-teal-500 hover:text-white p-2 rounded-md">
-              <Link href={"/contact"}>Contact</Link>
-            </li>
             {user ? (
               <li className="hover:bg-teal-500 hover:text-white p-2 rounded-md">
                 <button onClick={handleLogout}>Log Out</button>
               </li>
             ) : (
-              <>
-                <li className="hover:bg-teal-500 hover:text-white p-2 rounded-md">
-                  <Link href={"/sign-up"}>Sign Up</Link>
-                </li>
-                <li className="hover:bg-teal-500 hover:text-white p-2 rounded-md">
-                  <Link href={"/sign-in"}>Sign In</Link>
-                </li>
-              </>
+              <li className="hover:bg-teal-500 hover:text-white p-2 rounded-md">
+                <Link href={"/sign-up"}>Sign Up</Link>
+              </li>
             )}
           </ul>
         </div>
@@ -65,36 +52,22 @@ const Navbar = () => {
             className="hover:bg-teal-500 hover:text-white p-2 rounded-md"
             onClick={toggleMenu}
           >
-            <Link href={"/"}>Home</Link>
+            <Link href={"/admin"}>Home</Link>
           </li>
           <li
             className="hover:bg-teal-500 hover:text-white p-2 rounded-md"
             onClick={toggleMenu}
           >
-            <Link href={"/about"}>About</Link>
+            <Link href={"/admin/users"}>users</Link>
           </li>
           {user && (
             <li
               className="hover:bg-teal-500 hover:text-white p-2 rounded-md"
               onClick={toggleMenu}
             >
-              <Link href={"/payment"}>Payment</Link>
+              <Link href={"/admin/mutation"}>Mutation</Link>
             </li>
           )}
-          {user && (
-            <li
-              className="hover:bg-teal-500 hover:text-white p-2 rounded-md"
-              onClick={toggleMenu}
-            >
-              <Link href={"/mutation"}>Mutation</Link>
-            </li>
-          )}
-          <li
-            className="hover:bg-teal-500 hover:text-white p-2 rounded-md"
-            onClick={toggleMenu}
-          >
-            <Link href={"/contact"}>Contact</Link>
-          </li>
           {user ? (
             <li
               className="hover:bg-teal-500 hover:text-white p-2 rounded-md"
@@ -116,4 +89,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavbarAdmin;

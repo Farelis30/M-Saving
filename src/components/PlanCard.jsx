@@ -1,5 +1,5 @@
 "use client";
-import { useAuth } from "@/context/AuthContext";
+import useAuth from "@/context/useAuth";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -11,10 +11,10 @@ const PlanCard = ({ image, title, content, link }) => {
       <div className="overflow-hidden rounded-3xl mb-10">
         <Image
           src={image}
-          width={2000}
-          height={2000}
+          width={2000 / 4}
+          height={2000 / 4}
           alt={title}
-          className="transition-transform duration-300 ease-in-out hover:scale-150 h-96 md:h-[600px] object-cover"
+          className="transition-transform duration-300 ease-in-out hover:scale-150 h-96 md:h-[600px] object-cover w-full"
           priority
         />
       </div>

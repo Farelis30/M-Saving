@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import Navbar from "@/components/Navbar";
 
 const Contact = () => {
   const form = useRef();
@@ -34,7 +35,8 @@ const Contact = () => {
 
   return (
     <div className="my-10">
-      <div className="bg-white w-full md:w-3/4 mx-auto p-10 rounded md:shadow-xl md:border">
+      <Navbar />
+      <div className="bg-white w-full md:w-3/4 mx-auto p-10 rounded md:shadow-xl md:border mt-36">
         <h1 className="text-center text-3xl font-semibold">
           Send a message to us!
         </h1>
@@ -49,6 +51,7 @@ const Contact = () => {
                 name="user_email"
                 id="email"
                 className="w-full outline-none"
+                placeholder="Tulis email anda disini..."
               />
             </div>
           </div>
@@ -62,6 +65,7 @@ const Contact = () => {
                 name="user_name"
                 id="name"
                 className="w-full outline-none"
+                placeholder="Tulis nama anda disini..."
               />
             </div>
           </div>
@@ -75,9 +79,8 @@ const Contact = () => {
                 id="messageType"
                 className="w-full outline-none border-none"
               >
-                <option value="">Select</option>
-                <option value="Penemuan Bug">Penemuan Bug</option>
                 <option value="Masalah Transaksi">Masalah Transaksi</option>
+                <option value="Penemuan Bug">Penemuan Bug</option>
               </select>
             </div>
           </div>
@@ -90,6 +93,7 @@ const Contact = () => {
                 name="message"
                 id="message"
                 className="w-full outline-none"
+                placeholder="Tulis pesan anda disini..."
               ></textarea>
             </div>
           </div>
@@ -103,6 +107,7 @@ const Contact = () => {
                 name="phone_number"
                 id="phoneNumber"
                 className="w-full outline-none"
+                placeholder="Tulis nomor hp anda disini..."
               />
             </div>
           </div>

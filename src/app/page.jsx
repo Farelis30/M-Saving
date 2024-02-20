@@ -1,16 +1,18 @@
+import Navbar from "@/components/Navbar";
 import PlanCard from "@/components/PlanCard";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <div>
-      <div className="overflow-hidden flex justify-center mb-2">
+      <Navbar />
+      <div className="overflow-hidden flex justify-center mb-2 mt-24">
         <Image
           src={"/assets/plan1.jpg"}
-          width={1200}
-          height={1200}
+          width={1200 / 2}
+          height={1200 / 2}
           alt={"plan"}
-          className="object-cover"
+          className="object-cover w-full"
           priority
         />
       </div>
